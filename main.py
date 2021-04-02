@@ -4,6 +4,7 @@ from PyQt5.QtCore import pyqtSlot
 from ui.ui_helper import PageWindow
 from ui.main_page import MainPage
 
+
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -14,6 +15,7 @@ class MainWindow(QMainWindow):
         self.m_pages = {}
 
         self.register(MainPage(), "main_page")
+
         self.goto(self, "main_page")
 
     def register(self, widget, name):
@@ -33,7 +35,7 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = QMainWindow()
+    window = MainWindow()
     window.resize(900, 600)
     window.show()
     sys.exit(app.exec_())
